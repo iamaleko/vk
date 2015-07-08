@@ -1,0 +1,45 @@
+/**
+ * @file: Styles for IE8
+ * @author: Alexander Kolobov
+ */
+
+/* main */
+
+.dd-input, .dd-input-single {
+    padding-top: 5px;
+    padding-bottom: 4px;
+    behavior: url("./css/placeholder.htc");
+}
+.dd-input.msPlaceholder, .dd-input-single.msPlaceholder {
+    color: #757575;
+}
+.dd-arrow-hidden {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+/* selected items */
+
+.dd-item-add-cross {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
+.dd-item-cross {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+}
+.dd-item-cross:hover, .dd-item-add:hover .dd-item-add-cross {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+}
+
+/* list and options */
+
+.dd-options-shadow-1 {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=10);
+}
+.dd-options-shadow-2 {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=5);
+}
+
+/* scrollbar */
+
+.scroll-bar-outer:hover{
+    background: rgb(245, 245, 250);
+}

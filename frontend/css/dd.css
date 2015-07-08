@@ -1,0 +1,260 @@
+/**
+ * @file: Styles for select
+ * @author: Alexander Kolobov
+ */
+
+/* main */
+
+.dd, .dd-input, .dd-input-single {
+    -webkit-font-smoothing: antialiased;
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: tahoma, arial, verdana, sans-serif, 'Lucida Sans';
+    line-height: 1.182;
+}
+.dd-input:-ms-input-placeholder, .dd-input-single:-ms-input-placeholder {
+    color: #757575;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: tahoma, arial, verdana, sans-serif, 'Lucida Sans';
+    line-height: 1.182;
+}
+.dd-input-hidden {
+    left: 0;
+    top: -100px;
+    position: absolute;
+}
+.dd-input::-ms-clear, .dd-input-single::-ms-clear {
+    display: none;
+}
+.dd-anchor {
+    float: left;
+    width: 0;
+    height: 24px;
+}
+.dd-input {
+    float: left;
+    border: 0 none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 24px;
+    margin: 0;
+    outline: 0 none;
+    padding: 4px 6px 5px;
+    background: transparent;
+}
+.dd-input-single {
+    float: left;
+    border: 0 none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 24px;
+    margin: 0;
+    outline: 0 none;
+    padding: 4px 6px 5px;
+    background: transparent;
+}
+.dd {
+    background: #ffffff;
+    width: 416px;
+    position: relative;
+}
+.dd-disabled {
+    background: #fbfbfb;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.dd-disabled * {
+    cursor: default !important;
+}
+.dd-inner {
+    border: 1px solid #c0cad5;
+    min-height: 24px;
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+}
+.dd-arrow, .dd-clear {
+    background: url("../img/wide_dd.gif") no-repeat;
+    cursor: pointer;
+    float: right;
+    height: 24px;
+    overflow: hidden;
+    width: 21px;
+}
+.dd-arrow {
+    background-position: center -9px;
+}
+.dd-arrow-hidden {
+    display: none;
+}
+.dd-clear {
+    background-position: center 8px;
+}
+.dd-clear-hidden {
+    display: none;
+}
+
+/* selected items */
+
+.dd-item-single {
+    left: 8px;
+    overflow: hidden;
+    position: absolute;
+    right: 47px;
+    text-overflow: ellipsis;
+    top: 7px;
+    white-space: nowrap;
+    cursor: default;
+}
+.dd-item-add, .dd-item {
+    border-radius: 2px;
+    padding: 3px 20px 4px 8px;
+    font-weight: 700;
+    float: left;
+    margin: 2px;
+    white-space: nowrap;
+    max-width: 196px;
+}
+.dd-item-add {
+    background: #e5e8ed;
+    color: #45688e;
+    cursor: pointer;
+}
+.dd-item-add-hidden {
+    display: none;
+}
+.dd-item {
+    background: #597da3;
+    color: #ffffff;
+    cursor: default;
+}
+.dd-item, .dd-item-add, .dd-item-single {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.dd-item-add-name, .dd-item-name {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+.dd-item-add-cross, .dd-item-cross {
+    cursor: pointer;
+    height: 11px;
+    margin: 2px -15px 0 -11px;
+    opacity: 0.2;
+    transition: opacity 200ms linear;
+    -webkit-transition: opacity 200ms linear;
+    width: 11px;
+    float: right;
+}
+.dd-item-add-cross {
+    background: url("../img/im_plus.gif") 0 -11px;
+    opacity: 0.5;
+}
+.dd-item-cross {
+    background: url("../img/im_tabx.gif") 0 -13px;
+    opacity: 0.2;
+}
+.dd-item-cross:hover, .dd-item-add:hover .dd-item-add-cross {
+    opacity: 1;
+}
+
+/* list and options */
+
+.dd-options-outer {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #c0cad5;
+    left: 0;
+    margin: -1px 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 9999;
+}
+.dd-options-outer-hidden {
+    display: none;
+}
+.dd-options-outer .scroll-container {
+    margin: 0 0 -1px;
+}
+.dd-options-inner {
+    max-height: 211px;
+    overflow: hidden;
+}
+.dd-options-shadow-1, .dd-options-shadow-2 {
+    background: #000;
+    height: 1px;
+    left: -1px;
+    position: absolute;
+    right: -1px;
+}
+.dd-options-shadow-1 {
+    bottom: -2px;
+    opacity: 0.1;
+}
+.dd-options-shadow-2 {
+    bottom: -3px;
+    opacity: 0.05;
+}
+.dd-message {
+    background: #f1f1f1;
+    padding: 6px;
+}
+.dd-message-hidden {
+    display: none;
+}
+.dd-option {
+    cursor: pointer;
+    height: 45px;
+    position: relative;
+}
+.dd-option-inner {
+    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    bottom: 0;
+    left: 6px;
+    padding: 6px 0;
+    position: absolute;
+    right: 6px;
+    top: -1px;
+}
+.dd-option.dd-highlighted .dd-option-inner {
+    background: #f1f5f9;
+    border-color: #e1e7ed;
+    left: 0;
+    right: 0;
+    padding: 6px;
+    z-index: 1;
+}
+.dd-option-avatar {
+    float: left;
+    margin-right: 6px;
+    border-radius: 2px;
+    height: 32px;
+    width: 32px;
+}
+.dd-option-name, .dd-option-details {
+    padding-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dd-option-details {
+    color: #777;
+}
+.dd-option.dd-highlighted .dd-option-details {
+    color: #738392;
+}
+.dd-match {
+    background: #dae2e8 none repeat scroll 0 0;
+    color: #000;
+    font-style: normal;
+    font-weight: bold;
+}

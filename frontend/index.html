@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Dropdown</title>
+	<link type='text/css' rel='stylesheet' href='./css/main.css' />
+	<link type='text/css' rel='stylesheet' href='./css/dd.css' />
+	<link type='text/css' rel='stylesheet' href='./css/scroll.css' />
+	<!--[if IE 8]><link type='text/css' rel='stylesheet' href='./css/dd-ie8.css' /><![endif]-->
+	<!--[if IE 9]><link type='text/css' rel='stylesheet' href='./css/dd-ie9.css' /><![endif]-->
+	<script type='text/javascript' src='/vktest/backend/users-short.js'></script>
+	<script type='text/javascript' src='./js/polyfills.js'></script>
+	<script type='text/javascript' src='./js/utils.js'></script>
+	<script type='text/javascript' src='./js/scroll.js'></script>
+	<script type='text/javascript' src='./js/dd-provider-users.js'></script>
+	<script type='text/javascript' src='./js/dd.js'></script>
+</head>
+<body>
+	Мультиселект, оставляет строку поиска и не закрывается при выборе. Максимум 5 выбранных пунктов.
+	<div id='select_1'></div>
+	<br/>
+	Мультиселект, очищает строку поиска и закрывается при выборе. Не ограничен по размеру.
+	<div id='select_2'></div>
+	<br/>
+	Синглселект.
+	<div id='select_3'></div>
+	<br/>
+	Выключенный селект.
+	<div id='select_4'></div>
+	<script>
+
+		var provider = new SelectProviderUsers({
+			data: DATA,
+			url: '/vktest/backend/users.php',
+			avatars: true
+		});
+	
+		new Select({
+			container: document.getElementById('select_1'),
+			max_selected_options: 5,
+			reset_query_after_select: false,
+			focus_after_keyboard_select: true,
+			provider: provider,
+			callback: function(options) {
+				window.console && console.log('Select 1 says: ', options);
+			},
+			tab_index: 1
+		});
+
+		new Select({
+			container: document.getElementById('select_2'),
+			provider: provider,
+			callback: function(options) {
+				window.console && console.log('Select 2 says: ', options);
+			},
+			tab_index: 2
+		});
+
+		new Select({
+			container: document.getElementById('select_3'),
+			multiple: false,
+			disabled: false,
+			provider: provider,
+			callback: function(options) {
+				window.console && console.log('Select 3 says: ', options);
+			},
+			tab_index: 3
+		});
+
+		new Select({
+			container: document.getElementById('select_4'),
+			disabled: true,
+			provider: provider
+		});
+
+	</script>
+</body>
+</html>

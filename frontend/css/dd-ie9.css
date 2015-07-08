@@ -1,0 +1,13 @@
+/**
+ * @file: Styles for IE9
+ * @author: Alexander Kolobov
+ */
+
+/* main */
+
+.dd-input, .dd-input-single {
+    behavior: url("./css/placeholder.htc");
+}
+.dd-input.msPlaceholder, .dd-input-single.msPlaceholder {
+    color: #757575;
+}

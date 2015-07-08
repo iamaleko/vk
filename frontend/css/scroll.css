@@ -1,0 +1,60 @@
+/**
+ * @file: Styles for scroll
+ * @author: Alexander Kolobov
+ */
+
+.scroll-container {
+    overflow: hidden;
+    max-height: inherit;
+    height: inherit;
+}
+.scroll-content {
+    position: relative;
+}
+.scroll-bar-outer {
+    background: rgba(200, 200, 200, 0);
+    bottom: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background 150ms linear, width 150ms linear;
+    -webkit-transition: background 150ms linear, width 150ms linear;
+    width: 8px;
+    z-index: 100;
+}
+.scroll-bar-inner {
+    cursor: pointer;
+    margin-left: 1px;
+    position: relative;
+}
+.scroll-bar-inner div {
+    background: #dae1e8 none repeat scroll 0 0;
+    border-radius: 3px;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    width: 6px;
+    opacity: 0.7;
+    transition: width 150ms linear, opacity 200ms linear;
+    -webkit-transition: width 150ms linear, opacity 200ms linear;
+}
+.scroll-bar-outer:hover{
+    background: rgba(235, 235, 245, 0.4);
+    width: 10px;
+}
+.scroll-bar-outer:hover .scroll-bar-inner div{
+    border-radius: 4px;
+    width: 8px;
+    opacity: 1;
+}
+.scroll-content-update-frame {
+    top: 0;
+    background: transparent;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 1px;
+    z-index: 1;
+    bottom: 0;
+}

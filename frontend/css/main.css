@@ -1,0 +1,16 @@
+/**
+ * @file: Styles for whole page
+ * @author: Alexander Kolobov
+ */
+
+html {
+    background: #f7f7f7;
+}
+body {
+    margin: 30px;
+    color: #333;
+    font: 11px/30px tahoma,arial,verdana,sans-serif,"Lucida Sans";
+}
+.clear {
+    clear: both;
+}

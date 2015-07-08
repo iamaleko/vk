@@ -1,0 +1,34 @@
+/**
+ * @file: Placeholder attribute emulation
+ * @author: Alexander Kolobov
+ */
+
+<PUBLIC:ATTACH EVENT="oncontentready" ONEVENT="update()" />
+<PUBLIC:ATTACH EVENT="onfocus" ONEVENT="update()" />
+<PUBLIC:ATTACH EVENT="onblur" ONEVENT="update()" />
+ 
+<SCRIPT LANGUAGE="JScript">
+var update = (function() {
+    var className = 'msPlaceholder',
+        classRegExp = new RegExp('\\b'+className+'\\b','g'),
+        placeholder = null;
+    return function() {
+        if(placeholder = element.getAttribute('placeholder')) {
+            switch(window.event.type) {
+                default:
+                    if(element.value == '') {
+                        element.value = placeholder;
+                        element.className += ' '+className;
+                    }
+                break;
+                case 'focus':
+                    if(element.value == placeholder) {
+                        element.value = '';
+                    }
+                    element.className = element.className.replace(classRegExp, '');
+                break;
+            }
+        }
+    }
+})();
+</SCRIPT>
