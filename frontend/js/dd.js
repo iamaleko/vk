@@ -646,7 +646,7 @@ window.Select = (function () {
                         utils.classes.remove(this.ui.arrow, 'dd-arrow-hidden');
                         utils.classes.add(this.ui.clear, 'dd-clear-hidden');
                     }
-                    if(this.is_focused || !this.selected_options_length) {
+                    if(this.is_focused || !this.selected_options_length || this.query !== '') {
                         utils.classes.remove(this.ui.input, 'dd-input-hidden');
                         utils.classes.add(this.ui.add, 'dd-item-add-hidden');
                     } else if(this.query === '' && this.selected_options_length){
